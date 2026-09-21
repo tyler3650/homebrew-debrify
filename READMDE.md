@@ -4,12 +4,20 @@ Installs the latest pre-release version of [Debrify](https://github.com/varunsal
 
 ## Install:
 
-`brew install tyler3650/debrify/debrify`
+```
+brew tap tyler3650/debrify
+brew trust tyler3650/debrify
+brew install debrify
+```
 
 ## Update:
 
-`brew update && brew upgrade debrify`
+```
+brew update && brew upgrade debrify
+```
 
 ## Uninstall:
 
-`brew uninstall tyler3650/debrify/debrify --zap`
+```
+brew uninstall debrify --zap
+brew untap tyler3650/debrify
