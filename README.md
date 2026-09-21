@@ -20,5 +20,6 @@ brew update && brew upgrade debrify
 
 ```
 brew uninstall debrify --zap
+brew untrust tyler3650/debrify
 brew untap tyler3650/debrify
 ```
