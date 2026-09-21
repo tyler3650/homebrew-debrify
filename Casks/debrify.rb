@@ -11,6 +11,6 @@ cask "debrify" do
 
   zap trash: [
     "~/Library/Application Scripts/com.example.torrentSearchApp",
-    "~/Library/Containers/com.example.torrentSearchApp"
+    "~/Library/Containers/com.example.torrentSearchApp",
   ]
 end
