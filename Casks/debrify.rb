@@ -7,6 +7,23 @@ cask "debrify" do
   desc "Your personal media hub: One app to browse, stream, and organize media from your own services — with a cinematic player built in"
   homepage "https://debrify.tv/"
 
+  livecheck do
+    url :url
+    regex(/^debrify[._-]v?(\d+(?:\.\d+)+(?:-[a-z0-9.]+)?)\.dmg$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"]
+
+        release["assets"]&.map do |asset|
+          match = asset["name"]&.match(regex)
+          next if match.blank?
+
+          match[1]
+        end
+      end.flatten
+    end
+  end
+
   app "Debrify.app"
 
   zap trash: [
