@@ -24,6 +24,8 @@ cask "debrify" do
     end
   end
 
+  depends_on macos: :monterey
+
   app "Debrify.app"
 
   zap trash: [
