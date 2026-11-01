@@ -1,0 +1,34 @@
+name: Bump packages
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autobump:
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Bump packages
+        uses: Homebrew/actions/bump-packages@main
+        with:
+          token: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN || secrets.GITHUB_TOKEN }}
+          casks: debrify
+          fork: false
+
+      - name: Auto-merge PR
+        run: |
+          for pr in $(gh pr list --json number,headRefName --jq '.[] | select(.headRefName | startswith("bump-")) | .number'); do
+            gh pr merge "$pr" --squash --delete-branch
+          done
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}

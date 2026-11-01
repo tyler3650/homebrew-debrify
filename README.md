@@ -1,25 +1,21 @@
-# Homebrew cask for Debrify
+# Homebrew tap for Debrify
 
-Installs the latest pre-release version of [Debrify](https://github.com/varunsalian/debrify). Note: debrify releases unsigned dmg files, so you may have to trust the app when you install/update it.
+Installs the latest pre-release version of [Debrify](https://github.com/varunsalian/debrify) via homebrew.
 
-## Install:
+## Install
 
-```
-brew tap tyler3650/debrify
-brew trust tyler3650/debrify
-brew install debrify
+```bash
+brew tap tyler3650/debrify && brew trust tyler3650/debrify && brew install --cask debrify
 ```
 
-## Update:
+## Update
 
-```
-brew update && brew upgrade debrify
+```bash
+brew update && brew upgrade --cask debrify
 ```
 
-## Uninstall:
+## Uninstall
 
-```
-brew uninstall debrify --zap
-brew untrust tyler3650/debrify
-brew untap tyler3650/debrify
+```bash
+brew uninstall --cask debrify --zap && brew untrust tyler3650/debrify && brew untap tyler3650/debrify
 ```
