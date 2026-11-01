@@ -4,7 +4,7 @@ cask "debrify" do
 
   url "https://github.com/varunsalian/debrify/releases/download/v#{version}/debrify-v#{version}.dmg"
   name "Debrify"
-  desc "Your personal media hub: One app to browse, stream, and organize media from your own services — with a cinematic player built in"
+  desc "Personal media hub to browse, stream, and organize media"
   homepage "https://debrify.tv/"
 
   livecheck do
