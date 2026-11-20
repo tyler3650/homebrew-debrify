@@ -1,6 +1,6 @@
 cask "debrify" do
-  version "0.11.0-beta.1"
-  sha256 "d6918307b7799c2278f3d368b041abc77ffe00763bda937f7db71f7ca9742cac"
+  version "0.11.1-alpha.1"
+  sha256 "8b0908f6bb40e3f9e984318daa8d470f9f6840bc38cf54b5c7b5d33f793ca72e"
 
   url "https://github.com/varunsalian/debrify/releases/download/v#{version}/debrify-v#{version}.dmg"
   name "Debrify"
